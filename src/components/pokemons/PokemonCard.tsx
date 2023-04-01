@@ -11,7 +11,7 @@ export const PokemonCard: FC<IProps> = ({ pokemon }) => {
   const router = useRouter()
 
   const onClickHandler = () => {
-    router.push(`/pokemon/${pokemon.id}`)
+    router.push(`/pokemon/${pokemon.name}`)
   }
 
   return (

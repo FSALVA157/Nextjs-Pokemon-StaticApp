@@ -3,7 +3,7 @@ import { Layout } from '../components/layouts/Layout';
 import { GetStaticProps } from 'next'
 import { pokeApi } from '@/api';
 import { PokemonListResponse, SmallPokemon } from '@/interfaces';
-import { Card, Grid, Row, Text } from '@nextui-org/react';
+import { Card, Grid, Image, Row, Text } from '@nextui-org/react';
 import { PokemonCard } from '@/components/pokemons';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,6 +16,13 @@ export default function HomePage({pokemons}: IProps ) {
 
   return (
     <Layout titulo="Poke-App">
+
+      <Image
+        src='../../banner.png'
+        alt='banner'
+        width={200}
+        height={150}
+      />
      
      <Grid.Container gap={2} justify='flex-start'>
       {

@@ -5,6 +5,8 @@ import { Pokemon as IPokemon } from '@/interfaces';
 import { Button, Card, Container, Grid, Image, Text } from "@nextui-org/react";
 import { manageFavorites } from "@/utils";
 import { useState } from "react";
+import confetti from 'canvas-confetti'
+import { getPokemonInfo } from "@/utils/getPokemonInfo";
 
 interface IProps{
   pokemon: IPokemon
@@ -12,13 +14,22 @@ interface IProps{
 
 
 const Pokemon: NextPage<IProps> = ({pokemon}) => {
-  
+
 
   const [isFavorite, setIsFavorite] = useState(manageFavorites.isFavorite(pokemon.id))
   
   const onToggleFavorites = () =>{
     manageFavorites.toggleFavorite(pokemon.id)
     setIsFavorite(!isFavorite)
+    if(!isFavorite){      
+      confetti({
+        zIndex: 999,
+        particleCount: 100,
+        spread: 160,
+        angle: -100,
+        origin: { y: 0, x: 1 }
+      });
+    }
   }
 
   return (
@@ -106,11 +117,12 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 export const getStaticProps: GetStaticProps = async ({params}) => {
   const {id} = params as {id: string}
 
-  const {data} = await pokeApi.get<IPokemon>(`/pokemon/${id}`)
+  //const {data} = await pokeApi.get<IPokemon>(`/pokemon/${id}`)
+
 
   return {
     props: {
-      pokemon : data
+      pokemon : await getPokemonInfo(id)
     }
   }
 }

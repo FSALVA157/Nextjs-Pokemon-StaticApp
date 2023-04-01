@@ -1,6 +1,6 @@
 
 const toggleFavorite = (id: number)=>{
-    console.log("Id para Favorite: ", id)
+    
 
     let favorites: number[] = JSON.parse(localStorage.getItem('favorites') || '[]')
     if(favorites.includes(id)){
@@ -23,9 +23,15 @@ const isFavorite= (id: number): boolean  => {
     return favorites.includes(id)
 }
 
+const favorites_list = (): number[]=>{
+    const res: number[] =  JSON.parse(localStorage.getItem('favorites') || '[]') 
+    return res
+}
+
 let obj = {
     toggleFavorite,
-    isFavorite
+    isFavorite,
+    favorites_list
 }
 
 export default obj
