@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). In this learning app I've implemented poke api and chatgpt api for init in this new technology, the app show three curiosities of a pokemon requested to chatgpt api
 
+![image](https://github.com/FSALVA157/Nextjs-Pokemon-StaticApp/blob/main/gifs/poke-ap%C3%AC-1.gif)
+
+![image](https://github.com/FSALVA157/Nextjs-Pokemon-StaticApp/blob/main/gifs/poke-ap%C3%AC-2.gif)
+
+![image](https://github.com/FSALVA157/Nextjs-Pokemon-StaticApp/blob/main/gifs/poke-ap%C3%AC-3.gif)
+
+
 ## Getting Started
 
 First, run the development server:
