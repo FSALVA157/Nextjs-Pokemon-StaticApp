@@ -17,17 +17,20 @@ export default function HomePage({pokemons}: IProps ) {
   return (
     <Layout titulo="Poke-App">
 
-      <Image
+      {/* <Image
         src='../../banner.png'
         alt='banner'
         width={200}
         height={150}
-      />
+      /> */}
      
      <Grid.Container gap={2} justify='flex-start'>
       {
         pokemons.map(pokemon => (
-          <PokemonCard pokemon={pokemon} key={pokemon.id} />
+          <PokemonCard 
+            pokemon={pokemon}
+            key={pokemon.id}            
+           />
         ))
       }      
      </Grid.Container>
