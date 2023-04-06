@@ -46,7 +46,7 @@ export default function HomePage({pokemons}: IProps ) {
 //- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-  let {data} = await pokeApi.get<PokemonListResponse>('/pokemon?limit=151')
+  let {data} = await pokeApi.get<PokemonListResponse>('/pokemon?limit=153')
   
   let listado: SmallPokemon[] = data.results.map((pokemon, index) => {
         
