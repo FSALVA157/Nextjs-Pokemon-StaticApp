@@ -106,7 +106,7 @@ const PokemonPage: NextPage<IProps> = ({pokemon}) => {
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
   
-  const {data} = await pokeApi.get<PokemonListResponse>('/pokemon?limit=151')
+  const {data} = await pokeApi.get<PokemonListResponse>('/pokemon?limit=153')
   const listado: string[] = data.results.map(res => res.name)
   
   return {

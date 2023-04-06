@@ -103,7 +103,7 @@ const Pokemon: NextPage<IProps> = ({pokemon}) => {
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
-  const pokemons151: string[] = Array.from({length: 151},(_,index)=> `${index+1}`)
+  const pokemons151: string[] = Array.from({length: 153},(_,index)=> `${index+1}`)
   
 
   return {
